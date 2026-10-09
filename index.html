@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#090909" />
+    <meta name="description" content="Explora el menú de nuestro restaurante." />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Menú | Restaurante</title>
+  </head>
+  <body>
+    <main id="app" class="app-shell"></main>
+    <dialog id="filter-dialog" class="filter-dialog">
+      <form method="dialog" id="filter-form">
+        <div class="dialog-heading">
+          <div>
+            <p class="eyebrow">PERSONALIZA TU MENÚ</p>
+            <h2>Filtros</h2>
+          </div>
+          <button class="icon-button close-button" value="cancel" aria-label="Cerrar filtros">×</button>
+        </div>
+        <label class="filter-label" for="sort-select">Ordenar por</label>
+        <select id="sort-select" class="sort-select">
+          <option value="popular">Más populares</option>
+          <option value="price-low">Precio: menor a mayor</option>
+          <option value="price-high">Precio: mayor a menor</option>
+          <option value="rating">Mejor calificación</option>
+        </select>
+        <label class="popular-toggle">
+          <span><strong>Solo populares</strong><small>Los favoritos de nuestros clientes</small></span>
+          <input id="popular-only" type="checkbox" />
+        </label>
+        <div class="dialog-actions">
+          <button type="button" class="text-button" id="reset-filters">Limpiar</button>
+          <button type="submit" class="primary-button" value="apply">Ver resultados</button>
+        </div>
+      </form>
+    </dialog>
+    <script src="./app.js" defer></script>
+  </body>
+</html>
