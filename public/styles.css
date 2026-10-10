@@ -226,17 +226,25 @@ button {
 }
 
 .detail-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   height: 64px;
   padding: 0 var(--page-gutter);
 }
 
 .detail-header h1 {
+  grid-column: 2;
   overflow: hidden;
   margin: 0;
   font-size: 19px;
   font-weight: 600;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.detail-header [data-open-filters] {
+  grid-column: 3;
+  justify-self: end;
 }
 
 .home-button {
@@ -250,6 +258,22 @@ button {
 .home-button:hover,
 .home-button:active {
   background: #ddd;
+}
+
+.home-button-floating {
+  position: fixed;
+  z-index: 5;
+  bottom: calc(20px + env(safe-area-inset-bottom));
+  left: max(16px, calc((100vw - 560px) / 2 + 16px));
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgb(255 255 255 / 10%);
+  box-shadow: 0 4px 18px rgb(0 0 0 / 45%);
+}
+
+.home-button-floating:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .detail-content {

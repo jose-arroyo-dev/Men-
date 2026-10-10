@@ -334,7 +334,6 @@ function detailView(category) {
 
   app.innerHTML = `
     <header class="detail-header">
-      <button class="icon-button home-button" type="button" data-home aria-label="Volver al menú principal">${icons.home}</button>
       <h1>${category.title}</h1>
       <button class="icon-button" type="button" data-open-filters aria-label="Filtrar y ordenar">${icons.filter}</button>
     </header>
@@ -346,6 +345,7 @@ function detailView(category) {
           : '<div class="empty-state"><strong>No hay platillos para mostrar</strong>Prueba cambiando los filtros.</div>'}
       </div>
     </section>
+    <button class="icon-button home-button home-button-floating" type="button" data-home aria-label="Volver al menú principal">${icons.home}</button>
   `;
 }
 
